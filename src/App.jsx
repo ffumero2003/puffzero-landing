@@ -219,7 +219,7 @@ function App() {
                   </div>
                 </div>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
-                  in progress
+                  ongoing
                 </span>
               </div>
 
@@ -231,7 +231,7 @@ function App() {
                   </div>
                 </div>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
-                  in progress
+                  ongoing
                 </span>
               </div>
             </div>
