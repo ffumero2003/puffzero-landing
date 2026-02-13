@@ -23,7 +23,7 @@ import notifications from "./assets/Onboarding/post-onbaording/notifications.png
 import charging from "./assets/Onboarding/post-onbaording/charging.png";
 import personalization from "./assets/Onboarding/post-onbaording/personalized-plan.png";
 import benefits from "./assets/Onboarding/post-onbaording/benefits.png";
-import paywallOnboarding from "./assets/Onboarding/post-onbaording/paywall.png"
+import paywallOnboarding from "./assets/Onboarding/post-onbaording/paywall.png";
 
 import login from "./assets/auth/login.png";
 import signup from "./assets/auth/register.png";
@@ -32,12 +32,16 @@ import resetPassword from "./assets/auth/reset-password.png";
 
 import home from "./assets/app/home-screen.png";
 import progress from "./assets/app/progress-screen.png";
+import zuffy from "./assets/app/zuffy-screen.png";
+import settings from "./assets/app/settings-screen.png";
 
 import privacyPolicy from "./assets/privacy-policy.png";
 import termsAndConditions from "./assets/terms.png";
+import darkTheme from "./assets/dark-theme.png";
 import verificationEmail from "./assets/verify-email.png";
 import resetEmail from "./assets/reset-email.png";
 
+import logo from "./assets/logo-puff-zero-app.png";
 
 function App() {
   /**
@@ -79,26 +83,26 @@ function App() {
     { src: signup, alt: "Signup" },
     { src: forgotPassword, alt: "Forgot Password" },
     { src: resetPassword, alt: "Reset Password" },
- 
   ];
 
-  const paywall = [
-    { src: paywallOnboarding, alt: "Paywall" },
-  ];
+  const paywall = [{ src: paywallOnboarding, alt: "Paywall" }];
 
   const app = [
     { src: home, alt: "Home" },
     { src: progress, alt: "Progress" },
+    { src: zuffy, alt: "Zuffy" },
+    { src: settings, alt: "Settings" },
   ];
 
   const other = [
     { src: privacyPolicy, alt: "Privacy Policy" },
     { src: termsAndConditions, alt: "Terms and Conditions" },
+    { src: darkTheme, alt: "Dark Theme" },
   ];
   const email = [
     { src: verificationEmail, alt: "Verification Email" },
     { src: resetEmail, alt: "Reset Email" },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
@@ -109,8 +113,15 @@ function App() {
       <header className="relative z-10 border-b border-white/5">
         <div className="mx-auto flex w-full items-center justify-between px-6 py-4 sm:px-8">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-violet-500 to-cyan-400" />
-            <span className="text-sm font-semibold tracking-wide">PuffZero</span>
+            <img
+              src={logo}
+              alt="PuffZero logo"
+              className="h-12 w-12 rounded-lg object-cover sm:h-14 sm:w-14 sm:rounded-xl"
+            />
+
+            <span className="text-sm font-semibold tracking-wide">
+              PuffZero
+            </span>
             <span className="ml-2 rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
               coming soon
             </span>
@@ -139,23 +150,25 @@ function App() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Quit with structure • Track patterns • Stay motivated
+              Quit with structure • AI-powered support • Dark & light themes
             </div>
 
             <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-              A quitting plan that adapts to you.
+              An AI-powered quitting plan that adapts to you.
             </h1>
 
             <p className="mt-4 text-base leading-relaxed text-zinc-300 md:text-lg">
-              PuffZero is a full-featured vape cessation app built with React Native + Supabase.
-              It combines tracking, personalized plans, analytics, and motivational support — with
-              production-style authentication and a scalable architecture.
+              PuffZero is a full-featured vape cessation app built with React
+              Native + Supabase. It combines tracking, personalized plans,
+              analytics, an AI assistant (Zuffy), and motivational support —
+              with production-style authentication, dark/light themes,
+              transactional emails, and a scalable architecture.
             </p>
 
             <div className="mt-8 grid grid-cols-3 gap-3">
               <StatCard big="11" small="onboarding steps" />
               <StatCard big="14" small="LATAM currencies" />
-              <StatCard big="MVVM" small="clean architecture" />
+              <StatCard big="AI" small="built-in assistant" />
             </div>
 
             <div className="mt-6 flex flex-wrap gap-2">
@@ -165,6 +178,10 @@ function App() {
                 "Email verification",
                 "Edge Functions",
                 "Push notifications",
+                "AI Chat",
+                "Dark/Light Theme",
+                "Transactional Emails",
+                "14 LATAM Currencies",
               ].map((t) => (
                 <span
                   key={t}
@@ -188,10 +205,12 @@ function App() {
             <div className="mt-6 space-y-3 rounded-2xl border border-white/10 bg-zinc-950/40 p-5">
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <div className="text-sm font-semibold">Authentication lifecycle</div>
+                  <div className="text-sm font-semibold">
+                    Authentication lifecycle
+                  </div>
                   <div className="mt-1 text-xs text-zinc-400">
-                    Email/password, Google OAuth, reset password, verification grace period,
-                    protected routes, session persistence.
+                    Email/password, Google OAuth, reset password, verification
+                    grace period, protected routes, session persistence.
                   </div>
                 </div>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
@@ -203,7 +222,8 @@ function App() {
                 <div>
                   <div className="text-sm font-semibold">Onboarding engine</div>
                   <div className="mt-1 text-xs text-zinc-400">
-                    11-step flow with progress, animations, multi-currency, plan generation.
+                    11-step flow with progress, animations, multi-currency, plan
+                    generation.
                   </div>
                 </div>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
@@ -215,11 +235,12 @@ function App() {
                 <div>
                   <div className="text-sm font-semibold">Paywall + pricing</div>
                   <div className="mt-1 text-xs text-zinc-400">
-                    Currency-aware pricing display, weekly/yearly options, RevenueCat integration pending.
+                    Currency-aware pricing display, weekly/yearly options,
+                    RevenueCat integration pending.
                   </div>
                 </div>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
-                  ongoing
+                  done
                 </span>
               </div>
 
@@ -227,18 +248,47 @@ function App() {
                 <div>
                   <div className="text-sm font-semibold">Notifications</div>
                   <div className="mt-1 text-xs text-zinc-400">
-                    Expo push, reminders, daily quote, verification nudges, Android channels.
+                    Expo push, reminders, daily quote, verification nudges,
+                    Android channels.
                   </div>
                 </div>
                 <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
-                  ongoing
+                  done
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <div className="text-sm font-semibold">
+                    AI assistant (Zuffy)
+                  </div>
+                  <div className="mt-1 text-xs text-zinc-400">
+                    Conversational support powered by AI to help users through
+                    cravings, motivation dips, and daily check-ins.
+                  </div>
+                </div>
+                <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
+                  done
+                </span>
+              </div>
+
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <div className="text-sm font-semibold">Theming</div>
+                  <div className="mt-1 text-xs text-zinc-400">
+                    Full dark and light mode support with system detection and
+                    manual toggle across all screens.
+                  </div>
+                </div>
+                <span className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[10px] text-zinc-300">
+                  done
                 </span>
               </div>
             </div>
 
             <p className="mt-4 text-xs text-zinc-400">
-              Built to feel like a production app: clean separation, reusable components,
-              and scalable flows.
+              Built to feel like a production app: clean separation, reusable
+              components, and scalable flows.
             </p>
           </div>
         </div>
@@ -247,13 +297,16 @@ function App() {
       {/* Features */}
       <section id="features" className="relative z-10 border-t border-white/5">
         <div className="mx-auto px-6 py-14 sm:px-8">
-          <h2 className="text-2xl font-semibold tracking-tight">Key features</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Key features
+          </h2>
           <p className="mt-2 max-w-2xl text-zinc-300">
-            PuffZero focuses on the full quitting journey: secure access, guided onboarding, daily tracking,
-            analytics, and motivation — with a backend that supports real-world product needs.
+            PuffZero focuses on the full quitting journey: secure access, guided
+            onboarding, daily tracking, analytics, and motivation — with a
+            backend that supports real-world product needs.
           </p>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
             <InfoCard
               title="Auth done right"
               body="Email/password + Google OAuth, protected routes, session persistence, reset password via Edge Functions, and a verification grace period."
@@ -266,6 +319,10 @@ function App() {
               title="Tracking + insights"
               body="Daily progress, time-since-last tracker, money saved, streaks, and charts for 7/30/all time ranges with real-time sync."
             />
+            <InfoCard
+              title="AI-powered companion"
+              body="Zuffy, PuffZero's built-in AI assistant, provides conversational support for cravings, motivation, and daily guidance — all within the app."
+            />
           </div>
         </div>
       </section>
@@ -273,26 +330,46 @@ function App() {
       {/* Screenshots */}
       <section id="screens" className="relative z-10 border-t border-white/5">
         <div className="mx-auto px-6 py-14 sm:px-8">
-          
-          <TitleSub title="Onboarding" subtitle="11-step flow with progress tracking, animations, motivations, concerns, currency selection, and plan generation." />
+          <TitleSub
+            title="Onboarding"
+            subtitle="11-step flow with progress tracking, animations, motivations, concerns, currency selection, and plan generation."
+          />
           <RenderImages images={onboarding} />
 
-          <TitleSub title="Post Onboarding" subtitle="6-step flow with reviews, notifications, plans, paywall and more." />
+          <TitleSub
+            title="Post Onboarding"
+            subtitle="6-step flow with reviews, notifications, plans, paywall and more."
+          />
           <RenderImages images={postOnboarding} />
 
-          <TitleSub title="Authentication" subtitle="Email/password + Google OAuth, protected routes, session persistence, reset password via Edge Functions, and a verification grace period." />
+          <TitleSub
+            title="Authentication"
+            subtitle="Email/password + Google OAuth, protected routes, session persistence, reset password via Edge Functions, and a verification grace period."
+          />
           <RenderImages images={auth} />
 
-          <TitleSub title="Paywall" subtitle="Currency-aware pricing display, weekly/yearly options, RevenueCat integration pending." />
+          <TitleSub
+            title="Paywall"
+            subtitle="Currency-aware pricing display, weekly/yearly options, RevenueCat integration pending."
+          />
           <RenderImages images={paywall} />
 
-          <TitleSub title="Application Screens" subtitle="Home and Progress screens. Zuffy and Settings coming soon." />
+          <TitleSub
+            title="Application Screens"
+            subtitle="Home, Progress, Zuffy(AI) and Settings"
+          />
           <RenderImages images={app} />
 
-          <TitleSub title="Other" subtitle="Privacy Policy and Terms and Conditions screens." />
+          <TitleSub
+            title="Other"
+            subtitle="Privacy Policy, Terms and Conditions and Dark Theme."
+          />
           <RenderImages images={other} />
 
-          <TitleSub title="Email" subtitle="Verification and Reset Email screens." />
+          <TitleSub
+            title="Email"
+            subtitle="Verification and Reset Email screens."
+          />
           <RenderEmail images={email} />
         </div>
       </section>
@@ -302,7 +379,8 @@ function App() {
         <div className="mx-auto px-6 py-14 sm:px-8">
           <h2 className="text-2xl font-semibold tracking-tight">Tech</h2>
           <p className="mt-2 max-w-2xl text-zinc-300">
-            Built with a clean, scalable architecture — mobile-first UI with a backend designed for real product flows.
+            Built with a clean, scalable architecture — mobile-first UI with a
+            backend designed for real product flows.
           </p>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -321,6 +399,10 @@ function App() {
             <InfoCard
               title="Reanimated + Notifications"
               body="Smooth UI transitions, haptics-ready interactions, and Expo push notifications with scheduled reminders."
+            />
+            <InfoCard
+              title="Theming + Transactional Emails"
+              body="Full dark/light mode with system detection across all screens. Custom-branded verification and password reset emails via Supabase Edge Functions."
             />
           </div>
         </div>
